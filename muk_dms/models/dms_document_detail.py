@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 ###################################################################################
-# 
+#
 #    Copyright (C) 2017 MuK IT GmbH
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -17,16 +18,28 @@
 #
 ###################################################################################
 
-from . import dms_model
-from . import dms_locking
-from . import dms_access
-from . import dms_settings
-from . import dms_directory
-from . import dms_file
-from . import dms_data
-from . import dms_tag
-from . import dms_category
-from . import dms_data_database
-from . import ir_http
-from . import res_config_settings
-from . import dms_document_detail
+from odoo import models, fields, api, _
+
+class document_detail(models.Model):
+    _name = 'muk_dms.document.detail'
+    _description = "Muk Document Detail View"
+    _rec_name = 'trust_id'
+
+    effective_date = fields.Date("Effective Date")
+    trust_id = fields.Many2one(
+        'trust.trust',
+        string='Related Trust'
+    )
+
+    investor_id = fields.Many2one(
+        'res.partner',
+        related='trust_id.investor_id',
+        string = 'Related Investor'
+    )
+
+    family_id = fields.Many2one(
+        'res.partner',
+        related='trust_id.family_id',
+        string='Related Family'
+    )
+    contract_id = fields.Text("Contract ID")

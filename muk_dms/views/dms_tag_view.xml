@@ -45,6 +45,6 @@
 </record>
 
 <menuitem id="menu_dms_tag" name="Tags"
-	parent="cat_menu_muk_dms_config" action="action_dms_tag" />
+	parent="cat_menu_muk_dms_config" action="action_dms_tag" sequence="1"/>
 
 </odoo>

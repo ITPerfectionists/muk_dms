@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Copyright (C) 2017 MuK IT GmbH
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<odoo>
+    <record id="view_dms_document_detail_form" model="ir.ui.view">
+        <field name="name">muk_dms.document.detail.form</field>
+        <field name="model">muk_dms.document.detail</field>
+        <field name="arch" type="xml">
+            <form string="Document Detail">
+                <group>
+                    <group>
+                        <field name="effective_date" />
+                        <field name="contract_id" />
+                    </group>
+                    <group>
+                        <field name="trust_id" />
+                        <field name="investor_id" domain="[('investor','=',True)]"/>
+                        <field name="family_id" domain="[('family','=',True)]"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+     <record id="view_dms_document_detail_tree" model="ir.ui.view">
+         <field name="name">muk_dms.document.detail.tree</field>
+         <field name="model">muk_dms.document.detail</field>
+         <field name="arch" type="xml">
+            <tree string="Document Detail">
+                <field name="effective_date" />
+                <field name="trust_id" />
+                <field name="investor_id" domain="[('investor','=',True)]"/>
+                <field name="family_id" domain="[('family','=',True)]"/>
+                <field name="contract_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_dms_document_detail" model="ir.actions.act_window">
+        <field name="name">Document Detail</field>
+        <field name="res_model">muk_dms.document.detail</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_dms_document_detail_tree"/>
+        <field name="view_type">form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new category.
+            </p>
+            <p>
+                Tags are used to categorize Documents.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="action_dms_category_detail" name="Document Detail"
+        parent="cat_menu_muk_dms_config" action="action_dms_document_detail" sequence="3" />
+</odoo>

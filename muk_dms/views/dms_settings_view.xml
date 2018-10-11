@@ -187,6 +187,6 @@
 </record>
 
 <menuitem id="menu_dms_settings" name="Settings" groups="muk_dms.group_dms_manager"
-	parent="cat_menu_muk_dms_config" action="action_dms_settings" />
+	parent="cat_menu_muk_dms_config" action="action_dms_settings" sequence="4" />
 
 </odoo>

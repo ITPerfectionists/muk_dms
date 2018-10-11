@@ -20,7 +20,7 @@
 {
     "name": "MuK Documents",
     "summary": """Document Management System""",
-    "version": '11.0.2.1.7',   
+    "version": '11.0.2.1.8',
     "category": 'Document Management',   
     "license": "AGPL-3",
     "website": "http://www.mukit.at",
@@ -39,6 +39,7 @@
         "muk_web_preview",
         "muk_web_client",
         "muk_web_client_refresh",
+        "eh_loans",
     ],
     "data": [
         "security/dms_security.xml",
@@ -50,6 +51,7 @@
         "views/dms_category_view.xml",
         "views/dms_settings_view.xml",
         "views/dms_directory_view.xml",
+        "views/dms_document_detail_view.xml",
         "views/dms_file_view.xml",
         "views/dms_data_view.xml",
         "views/res_config_settings_view.xml",
