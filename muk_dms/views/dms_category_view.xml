@@ -45,6 +45,6 @@
 </record>
 
 <menuitem id="menu_dms_category" name="Categories"
-	parent="cat_menu_muk_dms_config" action="action_dms_category" sequence="2"/>
+	parent="cat_menu_muk_dms_config" action="action_dms_category"/>
 
 </odoo>

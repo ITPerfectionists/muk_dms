@@ -29,4 +29,3 @@ from . import dms_category
 from . import dms_data_database
 from . import ir_http
 from . import res_config_settings
-from . import dms_document_detail

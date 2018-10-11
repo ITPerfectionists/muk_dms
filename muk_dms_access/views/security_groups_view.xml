@@ -82,6 +82,6 @@
 </record>
 
 <menuitem id="menu_dms_group" name="Access"
-	parent="muk_dms.cat_menu_muk_dms_config" action="action_dms_groups" sequence="5" />
+	parent="muk_dms.cat_menu_muk_dms_config" action="action_dms_groups"/>
 		
 </odoo>
